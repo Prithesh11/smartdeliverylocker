@@ -1,0 +1,153 @@
+/* src/App.css */
+
+/* --- Google Font & CSS Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --bg-color: #1a1a1a;
+  --card-color: #242424;
+  --border-color: #3a3a3a;
+  --text-color: #f0f0f0;
+  --text-muted-color: #888;
+  --accent-color: #007bff;
+  --green-color: #28a745;
+  --yellow-color: #ffc107;
+  --red-color: #dc3545;
+}
+
+/* --- Base Styles --- */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* --- Dashboard Container --- */
+.dashboard-container {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* --- Header --- */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.dashboard-header p {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted-color);
+}
+
+/* --- Status Section --- */
+.status-section {
+  margin-bottom: 2rem;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.status-label {
+  color: var(--text-muted-color);
+  font-size: 0.9rem;
+}
+
+.status-value {
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.status-connected {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: var(--green-color);
+}
+.status-connecting {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: var(--yellow-color);
+}
+.status-disconnected {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: var(--red-color);
+}
+
+.live-feed .live-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* --- Controls Section --- */
+.controls-section h2 {
+  font-size: 1.2rem;
+  color: var(--text-muted-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-on {
+  background-color: var(--green-color);
+  color: white;
+}
+.btn-off {
+  background-color: var(--red-color);
+  color: white;
+}
+.btn-read {
+  background-color: var(--accent-color);
+  color: white;
+  grid-column: 1 / -1; /* Make this button span the full width */
+}
+
+.rest-status-message {
+  text-align: center;
+  color: var(--text-muted-color);
+  font-style: italic;
+  min-height: 1.2em; /* Prevents layout shift */
+}
